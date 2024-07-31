@@ -1,0 +1,24 @@
+<button type="button" (click)="getEmployee()">GetData</button>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobno</th>
+        <th>Country</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      @for (user of users; track $index){
+      <tr>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.mobno}}</td>
+        <td>{{user.country}}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
