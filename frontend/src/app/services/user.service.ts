@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  updateUser(userid: any, user: User) {
+    throw new Error('Method not implemented.');
+  }
   apiUrl = "http://localhost:8000";
   httpClient = inject(HttpClient);
 
@@ -16,12 +19,28 @@ export class UserService {
   //   this.http.get(`${this.apiUrl}/getdata`);
   // }
   getUsers(): Observable<User[]> {
-    // Return the observable from the HTTP get request
+
     return this.http.get<User[]>(`${this.apiUrl}/getdata`);
   }
-  postUsers(){
-    // Return the observable from the HTTP get request
-    // return this.httpClient.post<User[]>(`${this.apiUrl}/getdata`);
+  getUser(_id: string): Observable<User> {
+    const id = _id;
+
+    return this.http.get<User>(`${this.apiUrl}/getdata/`+id);
+  }
+
+  postUsers(data:any){
+
+    return this.httpClient.post(`${this.apiUrl}/postdata`,data);
+  }
+
+  deleteuser(_id: string) {
+    const id = _id;
+    return this.httpClient.delete(`${this.apiUrl}/deletedata/`+id)
+  }
+
+  updateData(userid: any, user: User) {
+    const id = userid;
+    return this.httpClient.put(`${this.apiUrl}/updatedata/`+id, user)
   }
 
 }

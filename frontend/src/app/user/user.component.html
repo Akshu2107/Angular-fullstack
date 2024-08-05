@@ -1,22 +1,29 @@
-<button type="button" (click)="getEmployee()">GetData</button>
-<div>
-  <table>
+<!-- <button type="button" (click)="getEmployee()">Show Data</button> -->
+<button type="button" routerLink="/signup">Add User</button>
+<div class="col-6 m-5">
+  <table class="table" style="border: 1px solid black;">
     <thead>
       <tr>
+        <th>User Id</th>
         <th>Name</th>
         <th>Email</th>
         <th>Mobno</th>
         <th>Country</th>
+        <th>Update</th>
+        <th>Delete</th>
       </tr>
 
     </thead>
     <tbody>
       @for (user of users; track $index){
       <tr>
+        <td>{{user._id}}</td>
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td>{{user.mobno}}</td>
         <td>{{user.country}}</td>
+        <td><button type="button" routerLink="/update/{{user._id}}">Update</button></td>
+        <td><button type="button" (click)="deleteUser(user._id)">Delete</button></td>
       </tr>
       }
     </tbody>

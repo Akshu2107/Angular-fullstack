@@ -1,0 +1,44 @@
+<!-- <form class="mb-3 w-50 m-auto" #userForm="ngForm">
+  <h3>Update Data</h3>
+  <div class="mb-3">
+    <label for="inputName" class="form-label">Name</label>
+    <input type="name" class="form-control" id="inputName" name="name" [(ngModel)]="user.name">
+  </div>
+  <div class="mb-3">
+    <label for="inputEmail" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="inputEmail" name="email" [(ngModel)]="user.email">
+  </div>
+  <div class="mb-3">
+    <label for="inputMobile" class="form-label">Mob No</label>
+    <input type="number" class="form-control" id="inputMobile" name="mobno" [(ngModel)]="user.mobno">
+  </div>
+  <div class="mb-3">
+    <label for="inputCountry" class="form-label">country</label>
+    <input type="country" class="form-control" id="inputCountry" name="country" [(ngModel)]="user.country">
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="updateUser()">Submit</button>
+</form> -->
+
+
+<form class="mb-3 w-50 m-auto" #userForm="ngForm" (ngSubmit)="updateuser()">
+  <h3>Update Data</h3>
+  <div class="mb-3">
+    <label for="inputName" class="form-label">Name</label>
+    <input type="text" class="form-control" id="inputName" name="name" [(ngModel)]="user.name">
+  </div>
+  <div class="mb-3">
+    <label for="inputEmail" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="inputEmail" name="email" [(ngModel)]="user.email">
+  </div>
+  <div class="mb-3">
+    <label for="inputMobile" class="form-label">Mob No</label>
+    <input type="number" class="form-control" id="inputMobile" name="mobno" [(ngModel)]="user.mobno">
+  </div>
+  <div class="mb-3">
+    <label for="inputCountry" class="form-label">Country</label>
+    <input type="text" class="form-control" id="inputCountry" name="country" [(ngModel)]="user.country">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

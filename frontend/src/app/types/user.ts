@@ -1,7 +1,8 @@
 export default interface User {
+  _id:string
   name: string;
   email: string;
-  mobno: number;
+  mobno: string;
   country: string;
 
 }
